@@ -471,3 +471,42 @@ nav a:hover {
     border: 1px solid rgba(255,255,255,0.1);
     flex-grow: 1;
 }
+/* Presale CTA Button */
+.button.presale-cta {
+    background: linear-gradient(45deg, #ff4f7d, #7d4fff);
+    border: none;
+    animation: presaleGlow 2s infinite;
+    margin-right: 1rem;
+}
+
+@keyframes presaleGlow {
+    0% { box-shadow: 0 0 10px rgba(255,79,125,0.3); }
+    50% { box-shadow: 0 0 30px rgba(255,79,125,0.6); }
+    100% { box-shadow: 0 0 10px rgba(255,79,125,0.3); }
+}
+
+/* Presale Page Specific */
+.presale-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.presale-cta::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255,255,255,0.2), 
+        transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -50%; }
+    100% { left: 150%; }
+}

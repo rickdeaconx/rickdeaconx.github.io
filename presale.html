@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLAIM Presale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .presale-hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .presale-amount {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 8rem;
+            color: #00f3ff;
+            text-shadow: 0 0 30px rgba(0,243,255,0.4);
+            animation: pulseSpin 4s infinite;
+            margin: 2rem 0;
+        }
+
+        @keyframes pulseSpin {
+            0% { transform: rotate(-5deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.1); }
+            50% { transform: rotate(-5deg) scale(1.2); }
+            75% { transform: rotate(5deg) scale(1.1); }
+            100% { transform: rotate(-5deg) scale(1); }
+        }
+
+        .presale-buttons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .presale-action {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 1.2rem;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .join-button {
+            background: linear-gradient(45deg, #7d4fff, #00f3ff);
+            border: none;
+            color: #0a0e17;
+        }
+
+        .contact-button {
+            background: transparent;
+            border: 2px solid #00f3ff;
+            color: #00f3ff;
+        }
+
+        .presale-action:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0,243,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-layers layer-1"></div>
+    <div class="gradient-layers layer-2"></div>
+    
+    <header>
+        <a href="index.html" class="logo">CLAIM</a>
+        <nav>
+            <a href="ai.html">Agentic AI</a>
+            <a href="features.html">Features</a>
+            <a href="dao.html">DAO</a>
+            <a href="coming-soon.html" class="button primary">Launch App</a>
+        </nav>
+    </header>
+
+    <section class="presale-hero">
+        <div class="presale-amount">$250K</div>
+        <p class="presale-subtext">Token presale underway - Secure your $CLAIM tokens before exchange listing</p>
+        
+        <div class="presale-buttons">
+            <a href="#" class="presale-action join-button">Participate Now</a>
+            <a href="mailto:presale@claim.io" class="presale-action contact-button">Contact Team</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p class="footer-note">© 2025 CLAIM Protocol</p>
+    </footer>
+</body>
+</html>

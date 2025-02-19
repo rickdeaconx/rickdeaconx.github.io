@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - CLAIM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* How It Works specific styles */
+        .process-flow {
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 4rem auto;
+            max-width: 800px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .timeline-marker {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #5A53B9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0e17;
+            z-index: 2;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            left: 30px;
+            width: 4px;
+            background: #5A53B9;
+            height: 100px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            margin-left: 2rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+            }
+            .timeline-connector {
+                display: none;
+            }
+            .timeline-content {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-layers layer-1"></div>
+    <div class="gradient-layers layer-2"></div>
+    
+    <header>
+        <a href="index.html" class="logo">CLAIM</a>
+        <nav>
+            <a href="ai.html">Agentic AI</a>
+            <a href="features.html">Features</a>
+            <a href="dao.html">DAO</a>
+            <a href="https://docs.claim.sucks" class="button primary">Docs</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="pixel-heading centered-heading">CLAIM Protection Process</h1>
+        <p>From risk assessment to claim resolution - fully decentralized</p>
+    </section>
+
+    <section class="process-flow">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">1</div>
+                <div class="timeline-content">
+                    <h3 class="pixel-heading">Wallet Analysis</h3>
+                    <p>AI scans transaction history and asset distribution patterns</p>
+                </div>
+            </div>
+            
+            <div class="timeline-connector"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">2</div>
+                <div class="timeline-content">
+                    <h3 class="pixel-heading">Dynamic Pricing</h3>
+                    <p>Real-time premium calculation based on risk factors</p>
+                </div>
+            </div>
+
+            <div class="timeline-connector"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">3</div>
+                <div class="timeline-content">
+                    <h3 class="pixel-heading">Policy Activation</h3>
+                    <p>Smart contract deployment with custom terms</p>
+                </div>
+            </div>
+
+            <div class="timeline-connector"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker">4</div>
+                <div class="timeline-content">
+                    <h3 class="pixel-heading">Claim Resolution</h3>
+                    <p>Hybrid AI/DAO review process within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="value-propositions">
+        <div class="feature-grid" style="justify-items: center;">
+            <div class="feature-card" style="max-width: 400px;">
+                <span class="card-icon">⏱️</span>
+                <h3 class="pixel-heading">24/7 Monitoring</h3>
+                <p>Continuous threat detection across all protected assets</p>
+            </div>
+            
+            <div class="feature-card" style="max-width: 400px;">
+                <span class="card-icon">🔐</span>
+                <h3 class="pixel-heading">Secure Payouts</h3>
+                <p>Automated stablecoin transfers upon claim approval</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p class="footer-note">© 2025 CLAIM Protocol</p>
+    </footer>
+</body>
+</html>

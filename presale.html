@@ -20,35 +20,30 @@
 
         .presale-amount {
             font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 7rem;
+            font-weight: 800;
+            font-size: 6.5rem;
             color: transparent;
-            background: linear-gradient(45deg, #7d4fff, #00f3ff);
+            background: linear-gradient(45deg, #7d4fff 30%, #00f3ff 70%);
             -webkit-background-clip: text;
             background-clip: text;
-            text-shadow: 0 0 20px rgba(125,79,255,0.3);
+            text-shadow: 2px 2px 0 var(--bg),
+                        -2px -2px 0 var(--bg),
+                        2px -2px 0 var(--bg),
+                        -2px 2px 0 var(--bg),
+                        0 0 20px rgba(125,79,255,0.3);
             animation: pulseScale 3s infinite;
             margin: 2rem 0;
-            letter-spacing: -3px;
+            letter-spacing: -2px;
             position: relative;
-        }
-
-        .presale-amount::after {
-            content: '$250K';
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: transparent;
-            z-index: -1;
-            -webkit-text-stroke: 2px var(--bg);
-            text-stroke: 2px var(--bg);
+            line-height: 1;
         }
 
         @keyframes pulseScale {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
         }
 
+        /* Rest of styles remain unchanged */
         .presale-subtext {
             font-size: 1.2rem;
             max-width: 600px;
@@ -124,7 +119,7 @@
             <a href="ai.html">Agentic AI</a>
             <a href="features.html">Features</a>
             <a href="dao.html">DAO</a>
-            <a href="coming-soon.html" class="button primary">Launch App</a>
+            <a href="https://docs.claim.site" class="button primary">Docs</a>
         </nav>
     </header>
 
@@ -134,7 +129,7 @@
         
         <div class="presale-buttons">
             <a href="#" class="presale-action join-button">Participate Now</a>
-            <a href="mailto:presale@claim.io" class="presale-action contact-button">Contact Team</a>
+            <a href="mailto:rickdeaconx@gmail.com" class="presale-action contact-button">Contact Team</a>
         </div>
     </section>
 

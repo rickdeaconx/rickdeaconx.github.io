@@ -8,11 +8,66 @@
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <style>
+            /* Fixed Gradient Background */
+            .gradient-layers {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+                opacity: 0.15;
+            }
+
+            .layer-1 {
+                background: radial-gradient(circle at 20% 80%, 
+                    rgba(90,83,185,0.4) 0%, 
+                    rgba(0,0,0,0) 60%);
+                animation: pulse-1 12s infinite;
+            }
+
+            .layer-2 {
+                background: radial-gradient(circle at 80% 20%, 
+                    rgba(0,243,255,0.2) 0%, 
+                    rgba(0,0,0,0) 60%);
+                animation: pulse-2 16s infinite;
+            }
+
+            @keyframes pulse-1 {
+                0%, 100% { transform: scale(1); opacity: 0.2; }
+                50% { transform: scale(1.4); opacity: 0.4; }
+            }
+
+            @keyframes pulse-2 {
+                0%, 100% { transform: translate(0, 0); }
+                33% { transform: translate(-5%, 5%); }
+                66% { transform: translate(5%, -5%); }
+            }
+
+            /* Enhanced Calculator Styles */
+            .calculator-header {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .calculator-header h2 {
+                font-family: 'Pixelify Sans', sans-serif;
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                background: linear-gradient(45deg, #7d4fff, #00f3ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .calculator-header p {
+                font-size: 1.2rem;
+                opacity: 0.9;
+                margin-bottom: 0;
+            }
+
             .presale-cta-container {
                 text-align: center;
                 margin: 3rem 0;
             }
-    
+
             .presale-button {
                 font-family: 'Pixelify Sans', sans-serif;
                 font-size: 1.5rem;
@@ -26,11 +81,11 @@
                 overflow: hidden;
                 transition: transform 0.3s;
             }
-    
+
             .presale-button:hover {
                 transform: scale(1.05);
             }
-    
+
             .presale-button::after {
                 content: '';
                 position: absolute;
@@ -45,72 +100,10 @@
                 transform: rotate(45deg);
                 animation: shine 3s infinite;
             }
-    
+
             @keyframes shine {
                 0% { left: -50%; }
                 100% { left: 150%; }
-            }
-
-            /* Calculator Styles */
-            .premium-calculator {
-                background: rgba(90,83,185,0.15);
-                border-radius: 20px;
-                padding: 3rem;
-                margin: 4rem auto;
-                max-width: 800px;
-                border: 2px solid var(--primary);
-                box-shadow: 0 0 40px rgba(90,83,185,0.2);
-            }
-
-            .slider-container {
-                margin: 2rem 0;
-            }
-
-            .slider-label {
-                font-family: 'Pixelify Sans', sans-serif;
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 1.5rem;
-                color: var(--text);
-                font-size: 1.2rem;
-            }
-
-            input[type="range"] {
-                -webkit-appearance: none;
-                width: 100%;
-                height: 8px;
-                background: rgba(255,255,255,0.1);
-                border-radius: 4px;
-                outline: none;
-                margin: 1rem 0;
-            }
-
-            input[type="range"]::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                width: 20px;
-                height: 20px;
-                background: linear-gradient(45deg, #7d4fff, #00f3ff);
-                border-radius: 50%;
-                cursor: pointer;
-                transition: transform 0.3s;
-            }
-
-            input[type="range"]::-webkit-slider-thumb:hover {
-                transform: scale(1.2);
-            }
-
-            .premium-display {
-                text-align: center;
-                font-family: 'Pixelify Sans', sans-serif;
-                font-size: 2.5rem;
-                margin-top: 2rem;
-                color: #00f3ff;
-            }
-
-            .premium-display span {
-                background: linear-gradient(45deg, #7d4fff, #00f3ff);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         </style>
     </head>
@@ -124,16 +117,20 @@
                 <a href="ai.html">Agentic AI</a>
                 <a href="features.html">Features</a>
                 <a href="dao.html">DAO</a>
-                <a href="https://docs.claim.sucks" class="button primary">Docs</a>
+                <a href="coming-soon.html" class="button primary">Launch App</a>
             </nav>
         </header>
-    
+
         <section class="hero">
             <h1>Reclaim Your Crypto Security</h1>
             <p>AI-powered protection against hacks, scams, and protocol failures</p>
             
-            <!-- Calculator Section -->
             <div class="premium-calculator">
+                <div class="calculator-header">
+                    <h2>🛡️ INSTANT COVERAGE CALC</h2>
+                    <p>Protect your bags in 60 seconds</p>
+                </div>
+                
                 <div class="slider-container">
                     <div class="slider-label">
                         <span>ASSET VALUE</span>
@@ -157,7 +154,6 @@
             </div>
         </section>
 
-        <!-- Feature Grid Section -->
         <section class="feature-grid">
             <div class="feature-card">
                 <span class="card-icon">🤖</span>
@@ -187,14 +183,12 @@
         </footer>
 
         <script>
-            // Initialize currency formatter
             const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
                 maximumFractionDigits: 0
             });
 
-            // Premium Calculation Function
             function calculatePremium() {
                 const A = parseFloat(document.getElementById('A').value);
                 const C = 0.7, L = 0.015, R = 1.1, P = 6;
@@ -203,10 +197,7 @@
                 document.getElementById('assetValue').textContent = (A/1000).toFixed(0) + 'K';
             }
 
-            // Event Listeners
             document.getElementById('A').addEventListener('input', calculatePremium);
-            
-            // Initial calculation
             calculatePremium();
         </script>
     </body>

@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <style>
-            /* Fixed Gradient Background */
+            /* Gradient Background */
             .gradient-layers {
                 position: fixed;
                 width: 100vw;
@@ -42,7 +42,7 @@
                 66% { transform: translate(5%, -5%); }
             }
 
-            /* Enhanced Calculator Styles */
+            /* Calculator Styles */
             .calculator-header {
                 text-align: center;
                 margin-bottom: 2rem;
@@ -111,32 +111,7 @@
                 transition: transform 0.3s;
             }
 
-            /* Fixed Presale Button Shine */
-            .presale-button::after {
-                content: '';
-                position: absolute;
-                top: -150%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                background: linear-gradient(45deg, 
-                    transparent, 
-                    rgba(255,255,255,0.15), 
-                    transparent);
-                transform: rotate(45deg);
-                animation: shine 1.5s infinite;
-            }
-
-            @keyframes shine {
-                0% { left: -50%; }
-                100% { left: 150%; }
-            }
-
-            .presale-cta-container {
-                text-align: center;
-                margin: 3rem 0;
-            }
-
+            /* Fixed Presale Button */
             .presale-button {
                 font-family: 'Pixelify Sans', sans-serif;
                 font-size: 1.5rem;
@@ -151,8 +126,35 @@
                 transition: transform 0.3s;
             }
 
+            .presale-button::after {
+                content: '';
+                position: absolute;
+                top: -200%;
+                left: -200%;
+                width: 400%;
+                height: 400%;
+                background: linear-gradient(45deg, 
+                    transparent 25%, 
+                    rgba(255,255,255,0.1) 50%, 
+                    transparent 75%);
+                transform: translate(-50%, -50%) rotate(45deg);
+                animation: subtleShine 1.2s infinite;
+                opacity: 0;
+            }
+
+            @keyframes subtleShine {
+                0% { transform: translate(-50%, -50%) rotate(45deg); opacity: 0; }
+                50% { opacity: 0.3; }
+                100% { transform: translate(50%, 50%) rotate(45deg); opacity: 0; }
+            }
+
             .presale-button:hover {
                 transform: scale(1.05);
+            }
+
+            .presale-cta-container {
+                text-align: center;
+                margin: 3rem 0;
             }
         </style>
     </head>

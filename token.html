@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$CLAIM Token - CLAIM Protocol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .token-hero {
+            text-align: center;
+            padding: 4rem 5% 6rem;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .distribution-chart {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid var(--primary);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #7d4fff, #00f3ff);
+            border-radius: 4px;
+        }
+
+        .burn-mechanism {
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 800px;
+            border: 2px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-layers layer-1"></div>
+    <div class="gradient-layers layer-2"></div>
+    
+    <header>
+        <a href="index.html" class="logo">CLAIM</a>
+        <nav>
+            <a href="ai.html">Agentic AI</a>
+            <a href="features.html">Features</a>
+            <a href="dao.html">DAO</a>
+            <a href="token.html" class="button primary">Token</a>
+        </nav>
+    </header>
+
+    <section class="token-hero">
+        <h1 class="pixel-heading">$CLAIM Token</h1>
+        <p class="centered-text">Native governance and utility token of the CLAIM DeFAI ecosystem</p>
+        <div class="total-supply">
+            <span class="supply-number">1,000,000,000</span>
+            <span class="supply-label">Total Supply</span>
+        </div>
+    </section>
+
+    <section class="feature-grid">
+        <div class="feature-card">
+            <span class="card-icon">🛡️</span>
+            <h3 class="pixel-heading">Token Utility</h3>
+            <ul class="token-list">
+                <li>Premium Payments</li>
+                <li>Governance Voting</li>
+                <li>Claim Payouts</li>
+                <li>Staking Rewards</li>
+            </ul>
+        </div>
+
+        <div class="distribution-chart">
+            <h3 class="pixel-heading">Token Distribution</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%"></div>
+            </div>
+            <span>65% Public Sale</span>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 20%"></div>
+            </div>
+            <span>20% Claims Pool</span>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 10%"></div>
+            </div>
+            <span>10% Team</span>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 5%"></div>
+            </div>
+            <span>5% Liquidity & Ops</span>
+        </div>
+    </section>
+
+    <section class="tokenomics-grid">
+        <div class="feature-card">
+            <span class="card-icon">⚖️</span>
+            <h3 class="pixel-heading">Governance</h3>
+            <ul class="token-list">
+                <li>Protocol Upgrades</li>
+                <li>Risk Parameters</li>
+                <li>Claim Reviews</li>
+                <li>Treasury Management</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <span class="card-icon">🔥</span>
+            <h3 class="pixel-heading">Burn Mechanism</h3>
+            <p>Quarterly burns from premium revenues</p>
+            <div class="burn-counter">
+                <span class="burn-amount">Next Burn: Q3 2024</span>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <span class="card-icon">🔄</span>
+            <h3 class="pixel-heading">Staking Options</h3>
+            <ul class="token-list">
+                <li>Claims Liquidity Pool</li>
+                <li>Governance Staking</li>
+                <li>Long-term Lockups</li>
+                <li>Policy Renewal Discounts</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p class="footer-note">© 2025 CLAIM Protocol</p>
+    </footer>
+
+    <script>
+        // Animate supply number
+        const supplyNumber = document.querySelector('.supply-number');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const countUp = (num, elem) => {
+                        let current = 0;
+                        const updateCount = () => {
+                            elem.textContent = Math.floor(current).toLocaleString();
+                            if(current < num) {
+                                current += num/100;
+                                requestAnimationFrame(updateCount);
+                            }
+                        }
+                        requestAnimationFrame(updateCount);
+                    }
+                    countUp(1000000000, supplyNumber);
+                }
+            });
+        });
+        observer.observe(supplyNumber);
+    </script>
+</body>
+</html>

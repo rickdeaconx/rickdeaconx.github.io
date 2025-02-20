@@ -510,3 +510,37 @@ nav a:hover {
     0% { left: -50%; }
     100% { left: 150%; }
 }
+
+/* Token Page Additions */
+.total-supply {
+    margin: 2rem 0;
+}
+
+.supply-number {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 3rem;
+    color: var(--primary);
+    display: block;
+}
+
+.supply-label {
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.token-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.token-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.burn-counter {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+}

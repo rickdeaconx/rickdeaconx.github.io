@@ -8,29 +8,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        :root {
+            --primary: #5A53B9;
+            --secondary: #3A32A3;
+            --bg: #0a0e17;
+            --text: #e6f1ff;
+        }
+
         .hero h1.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
             font-size: 3.5rem;
-            color: var(--text); /* Solid color instead of gradient */
+            color: var(--primary); /* Solid purple/blue color */
             margin-bottom: 1.5rem;
         }
 
-        /* Remove gradient properties from these classes */
         .timeline-content h3.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--text);
+            color: var(--primary);
         }
 
         .feature-card h3.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
             font-size: 1.5rem;
-            color: var(--text);
+            color: var(--primary);
         }
 
-        /* Add consistent accent color for subheadings */
         .pixel-heading {
+            color: var(--primary);
+        }
+
+        .card-icon {
             color: var(--primary);
         }
     </style>

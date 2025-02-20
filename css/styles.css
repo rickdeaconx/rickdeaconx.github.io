@@ -584,3 +584,24 @@ nav a:hover {
 .distro-item {
     margin: 1.5rem 0;
 }
+.token-mechanics {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+}
+
+.bottom-row {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .bottom-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .token-mechanics {
+        margin-bottom: 2rem;
+    }
+}

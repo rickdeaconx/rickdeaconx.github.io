@@ -11,21 +11,27 @@
         .hero h1.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
             font-size: 3.5rem;
-            background: linear-gradient(to right, #7d4fff, #00f3ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text); /* Solid color instead of gradient */
             margin-bottom: 1.5rem;
         }
 
+        /* Remove gradient properties from these classes */
         .timeline-content h3.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
             font-size: 1.8rem;
             margin-bottom: 1rem;
+            color: var(--text);
         }
 
         .feature-card h3.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
             font-size: 1.5rem;
+            color: var(--text);
+        }
+
+        /* Add consistent accent color for subheadings */
+        .pixel-heading {
+            color: var(--primary);
         }
     </style>
 </head>

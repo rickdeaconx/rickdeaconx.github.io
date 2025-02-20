@@ -1,193 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLAIM - AI-Powered Crypto Insurance</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        :root {
-            --primary: #5A53B9;
-            --secondary: #3A32A3;
-            --bg: #0a0e17;
-            --text: #e6f1ff;
-            --ai-accent: #5A53B9;
-        }
+    <head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CLAIM - AI-Powered Crypto Insurance</title>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <style>
+            /* Gradient Background */
+            .gradient-layers {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+                opacity: 0.15;
+            }
 
-        .gradient-layers {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            opacity: 0.15;
-        }
+            .layer-1 {
+                background: radial-gradient(circle at 20% 80%, 
+                    rgba(90,83,185,0.4) 0%, 
+                    rgba(0,0,0,0) 60%);
+                animation: pulse-1 12s infinite;
+            }
 
-        .layer-1 {
-            background: radial-gradient(circle at 20% 80%, rgba(90,83,185,0.4) 0%, rgba(0,0,0,0) 60%);
-            animation: pulse-1 12s infinite;
-        }
+            .layer-2 {
+                background: radial-gradient(circle at 80% 20%, 
+                    rgba(0,243,255,0.2) 0%, 
+                    rgba(0,0,0,0) 60%);
+                animation: pulse-2 16s infinite;
+            }
 
-        .layer-2 {
-            background: radial-gradient(circle at 80% 20%, rgba(0,243,255,0.2) 0%, rgba(0,0,0,0) 60%);
-            animation: pulse-2 16s infinite;
-        }
+            @keyframes pulse-1 {
+                0%, 100% { transform: scale(1); opacity: 0.2; }
+                50% { transform: scale(1.4); opacity: 0.4; }
+            }
 
-        @keyframes pulse-1 {
-            0%, 100% { transform: scale(1); opacity: 0.2; }
-            50% { transform: scale(1.4); opacity: 0.4; }
-        }
+            @keyframes pulse-2 {
+                0%, 100% { transform: translate(0, 0); }
+                33% { transform: translate(-5%, 5%); }
+                66% { transform: translate(5%, -5%); }
+            }
 
-        @keyframes pulse-2 {
-            0%, 100% { transform: translate(0, 0); }
-            33% { transform: translate(-5%, 5%); }
-            66% { transform: translate(5%, -5%); }
-        }
+            /* Calculator Styles */
+            .calculator-header {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
 
-        .hero h1.pixel-heading {
-            font-family: 'Pixelify Sans', sans-serif;
-            font-size: 4rem;
-            background: linear-gradient(to right, #fff 30%, var(--ai-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 2rem;
-        }
+            .calculator-header h2 {
+                font-family: 'Pixelify Sans', sans-serif;
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                background: linear-gradient(45deg, #7d4fff, #00f3ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
 
-        .presale-button::after {
-            content: '';
-            position: absolute;
-            top: -200%;
-            left: -200%;
-            width: 400%;
-            height: 400%;
-            background: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%);
-            transform: translate(-50%, -50%) rotate(45deg);
-            animation: subtleShine 1.2s infinite;
-            opacity: 0;
-        }
+            .calculator-header p {
+                font-size: 1.2rem;
+                opacity: 0.9;
+                margin-bottom: 0;
+            }
 
-        @keyframes subtleShine {
-            0% { transform: translate(-50%, -50%) rotate(45deg); opacity: 0; }
-            50% { opacity: 0.3; }
-            100% { transform: translate(50%, 50%) rotate(45deg); opacity: 0; }
-        }
+            .slider-container {
+                margin: 3rem 0;
+            }
 
-        .slider-label {
-            font-family: 'Pixelify Sans', sans-serif;
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--text);
-        }
+            .slider-label {
+                font-family: 'Pixelify Sans', sans-serif;
+                display: flex;
+                justify-content: space-between;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                color: var(--text);
+            }
 
-        .premium-display {
-            font-family: 'Pixelify Sans', sans-serif;
-            font-size: 4rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
+            .premium-display {
+                text-align: center;
+                font-family: 'Pixelify Sans', sans-serif;
+                font-size: 3.5rem;
+                margin: 3rem 0;
+                color: #00f3ff;
+            }
 
-        .premium-display span {
-            background: linear-gradient(45deg, #7d4fff, #00f3ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
-</head>
-<body>
-    <div class="gradient-layers layer-1"></div>
-    <div class="gradient-layers layer-2"></div>
-    
-    <header>
-        <a href="index.html" class="logo">CLAIM</a>
-        <nav>
-            <a href="ai.html">Agentic AI</a>
-            <a href="features.html">Features</a>
-            <a href="dao.html">DAO</a>
-            <a href="coming-soon.html" class="button primary">Launch App</a>
-        </nav>
-    </header>
+            .premium-display span {
+                background: linear-gradient(45deg, #7d4fff, #00f3ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 0 20px rgba(125,79,255,0.3);
+            }
 
-    <section class="hero">
-        <h1 class="pixel-heading">Reclaim Your Crypto Security</h1>
-        <p>AI-powered protection against hacks, scams, and protocol failures</p>
+            input[type="range"] {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 8px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 4px;
+                outline: none;
+                margin: 1rem 0;
+            }
+
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 24px;
+                height: 24px;
+                background: linear-gradient(45deg, #7d4fff, #00f3ff);
+                border-radius: 50%;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+
+            /* Fixed Presale Button */
+            .presale-button {
+                font-family: 'Pixelify Sans', sans-serif;
+                font-size: 1.5rem;
+                padding: 1.5rem 4rem;
+                background: linear-gradient(45deg, #7d4fff, #00f3ff);
+                border: none;
+                border-radius: 50px;
+                color: #0a0e17;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.3s;
+            }
+
+            .presale-button::after {
+                content: '';
+                position: absolute;
+                top: -200%;
+                left: -200%;
+                width: 400%;
+                height: 400%;
+                background: linear-gradient(45deg, 
+                    transparent 25%, 
+                    rgba(255,255,255,0.1) 50%, 
+                    transparent 75%);
+                transform: translate(-50%, -50%) rotate(45deg);
+                animation: subtleShine 1.2s infinite;
+                opacity: 0;
+            }
+
+            @keyframes subtleShine {
+                0% { transform: translate(-50%, -50%) rotate(45deg); opacity: 0; }
+                50% { opacity: 0.3; }
+                100% { transform: translate(50%, 50%) rotate(45deg); opacity: 0; }
+            }
+
+            .presale-button:hover {
+                transform: scale(1.05);
+            }
+
+            .presale-cta-container {
+                text-align: center;
+                margin: 3rem 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="gradient-layers layer-1"></div>
+        <div class="gradient-layers layer-2"></div>
         
-        <div class="premium-calculator">
-            <div class="calculator-header">
-                <h2>🛡️ INSTANT COVERAGE CALC</h2>
-                <p>Protect your bags in 60 seconds</p>
-            </div>
+        <header>
+            <a href="index.html" class="logo">CLAIM</a>
+            <nav>
+                <a href="ai.html">Agentic AI</a>
+                <a href="features.html">Features</a>
+                <a href="dao.html">DAO</a>
+                <a href="https://docs.claim.sucks" class="button primary">Docs</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Reclaim Your Crypto Security</h1>
+            <p>AI-powered protection against hacks, scams, and protocol failures</p>
             
-            <div class="slider-container">
-                <div class="slider-label">
-                    <span>ASSET VALUE</span>
-                    <span>$<span id="assetValue">100K</span></span>
+            <div class="premium-calculator">
+                <div class="calculator-header">
+                    <h2>🛡️ INSTANT COVERAGE CALC</h2>
+                    <p>Protect your bags in 60 seconds</p>
                 </div>
-                <input type="range" id="A" min="1000" max="1000000" value="100000" step="1000">
+                
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>ASSET VALUE</span>
+                        <span>$<span id="assetValue">100K</span></span>
+                    </div>
+                    <input type="range" id="A" min="1000" max="1000000" value="100000" step="1000">
+                </div>
+                
+                <div class="premium-display">
+                    <span id="monthlyPremium">$192</span> staked /MO
+                </div>
+            </div>
+
+            <div class="presale-cta-container">
+                <a href="presale.html" class="presale-button">JOIN PRESALE</a>
+            </div>
+
+            <div class="hero-cta">
+                <a href="coming-soon.html" class="button primary">Get Protected</a>
+                <a href="how-it-works.html" class="button secondary">How It Works</a>
+            </div>
+        </section>
+
+        <section class="feature-grid">
+            <div class="feature-card">
+                <span class="card-icon">🤖</span>
+                <h3 class="pixel-heading">Agentic AI-Powered Monitoring</h3>
+                <p>24/7 monitoring of assets, changes, market conditions</p>
             </div>
             
-            <div class="premium-display">
-                <span id="monthlyPremium">$192</span> staked /MO
+            <div class="feature-card">
+                <span class="card-icon">⚡</span>
+                <h3 class="pixel-heading">Instant Coverage</h3>
+                <p>Smart contract policies activated in 2 clicks</p>
             </div>
-        </div>
+            
+            <div class="feature-card">
+                <span class="card-icon">🌐</span>
+                <h3 class="pixel-heading">DAO Governance</h3>
+                <p>Community-controlled protocol upgrades and claim payouts</p>
+            </div>
+        </section>
 
-        <div class="presale-cta-container">
-            <a href="presale.html" class="presale-button">JOIN PRESALE</a>
-        </div>
+        <footer>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p class="footer-note">© 2025 CLAIM Protocol</p>
+        </footer>
 
-        <div class="hero-cta">
-            <a href="coming-soon.html" class="button primary">Get Protected</a>
-            <a href="how-it-works.html" class="button secondary">How It Works</a>
-        </div>
-    </section>
+        <script>
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            });
 
-    <section class="feature-grid">
-        <div class="feature-card">
-            <span class="card-icon">🤖</span>
-            <h3 class="pixel-heading">Agentic AI-Powered Monitoring</h3>
-            <p>24/7 monitoring of assets, changes, market conditions</p>
-        </div>
-        
-        <div class="feature-card">
-            <span class="card-icon">⚡</span>
-            <h3 class="pixel-heading">Instant Coverage</h3>
-            <p>Smart contract policies activated in 2 clicks</p>
-        </div>
-        
-        <div class="feature-card">
-            <span class="card-icon">🌐</span>
-            <h3 class="pixel-heading">DAO Governance</h3>
-            <p>Community-controlled protocol upgrades and claim payouts</p>
-        </div>
-    </section>
+            function calculatePremium() {
+                const A = parseFloat(document.getElementById('A').value);
+                const C = 0.7, L = 0.015, R = 1.1, P = 6;
+                const monthly = (A * C * L * R) / P;
+                document.getElementById('monthlyPremium').textContent = formatter.format(monthly);
+                document.getElementById('assetValue').textContent = (A/1000).toFixed(0) + 'K';
+            }
 
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </div>
-        <p class="footer-note">© 2025 CLAIM Protocol</p>
-    </footer>
-
-    <script>
-        const formatter = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            maximumFractionDigits: 0
-        });
-
-        function calculatePremium() {
-            const A = parseFloat(document.getElementById('A').value);
-            const C = 0.7, L = 0.015, R = 1.1, P = 6;
-            const monthly = (A * C * L * R) / P;
-            document.getElementById('monthlyPremium').textContent = formatter.format(monthly);
-            document.getElementById('assetValue').textContent = (A/1000).toFixed(0) + 'K';
-        }
-
-        document.getElementById('A').addEventListener('input', calculatePremium);
-        calculatePremium();
-    </script>
-</body>
+            document.getElementById('A').addEventListener('input', calculatePremium);
+            calculatePremium();
+        </script>
+    </body>
 </html>

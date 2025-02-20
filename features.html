@@ -8,56 +8,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Features-specific styles */
-        .process-flow {
-            padding: 6rem 5%;
-            text-align: center;
-        }
-
-        .timeline {
-            position: relative;
-            margin: 4rem auto;
-            max-width: 800px;
-        }
-
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            margin: 3rem 0;
-        }
-
-        .timeline-marker {
+        .hero h1.pixel-heading {
             font-family: 'Pixelify Sans', sans-serif;
-            font-size: 2rem;
-            width: 60px;
-            height: 60px;
-            border: 3px solid #5A53B9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0a0e17;
-            z-index: 2;
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #7d4fff, #00f3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
         }
 
-        .timeline-connector {
-            position: absolute;
-            left: 30px;
-            width: 4px;
-            background: #5A53B9;
-            height: 100px;
-            margin: 0 auto;
-            z-index: 1;
+        .timeline-content h3.pixel-heading {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
-        .timeline-content {
-            margin-left: 2rem;
-            padding: 2rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 15px;
-            flex-grow: 1;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: left;
+        .feature-card h3.pixel-heading {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-size: 1.5rem;
         }
     </style>
 </head>
@@ -76,7 +44,7 @@
     </header>
 
     <section class="hero">
-        <h1>DeFAI Protection Matrix</h1>
+        <h1 class="pixel-heading">DeFAI Protection Matrix</h1>
         <p>Agentic security systems powered by decentralized governance</p>
     </section>
 

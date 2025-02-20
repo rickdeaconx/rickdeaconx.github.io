@@ -544,3 +544,43 @@ nav a:hover {
     background: rgba(255,255,255,0.03);
     border-radius: 10px;
 }
+/* Token Page Improvements */
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.token-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.token-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.95rem;
+}
+
+.token-list li:last-child {
+    border-bottom: none;
+}
+
+.supply-display {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+}
+
+.token-distro {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.distro-item {
+    margin: 1.5rem 0;
+}

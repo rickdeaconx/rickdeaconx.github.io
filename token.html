@@ -1,96 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>$CLAIM Token - CLAIM Protocol</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <base href="/">
     <style>
-        :root {
-            --primary: #5A53B9;
-            --secondary: #3A32A3;
-            --bg: #0a0e17;
-            --text: #e6f1ff;
-        }
-
-        .token-hero {
-            text-align: center;
-            padding: 4rem 5% 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .token-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
         .token-distro {
             background: rgba(255,255,255,0.03);
             border-radius: 20px;
             padding: 2rem;
-            margin: 2rem auto;
+            margin: 4rem auto;
             max-width: 800px;
             border: 2px solid var(--primary);
-        }
-
-        .token-mechanics {
-            grid-column: 1 / -1;
-            justify-self: center;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .bottom-row {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            box-shadow: 0 0 40px rgba(90,83,185,0.2);
         }
 
         .progress-container {
             height: 8px;
             background: rgba(255,255,255,0.1);
             border-radius: 4px;
-            margin: 0.5rem 0;
+            margin: 1rem 0;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(45deg, #7d4fff, #00f3ff);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
             border-radius: 4px;
             transition: width 0.5s ease;
         }
 
         .supply-display {
-            font-family: 'Pixelify Sans', sans-serif;
+            font-family: var(--cyber-font);
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--accent);
             margin: 2rem 0;
-            padding: 1rem;
+            padding: 2rem;
             background: rgba(255,255,255,0.03);
             border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
         }
 
-        @media (min-width: 768px) {
-            .token-grid {
-                grid-template-rows: auto auto;
-            }
-            
-            .token-mechanics {
-                grid-row: 1;
-            }
-            
-            .bottom-row {
-                grid-row: 2;
-            }
+        .token-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .token-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .token-list li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
@@ -107,18 +72,18 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="hero">
-        <h1 class="pixel-heading">$CLAIM Token</h1>
+        <h1>$CLAIM Token</h1>
         <p>Native governance and utility token of the CLAIM DeFAI ecosystem</p>
         <div class="supply-display">1,000,000,000 $CLAIM</div>
     </section>
 
     <section class="token-distro">
-        <h2 class="pixel-heading centered-heading">Token Distribution</h2>
+        <h2>Token Distribution</h2>
         <div class="distro-item">
-            <div class="flex-between">
+            <div class="slider-label">
                 <span>Public Sale</span>
                 <span>65%</span>
             </div>
@@ -128,7 +93,7 @@
         </div>
 
         <div class="distro-item">
-            <div class="flex-between">
+            <div class="slider-label">
                 <span>Claims Pool</span>
                 <span>20%</span>
             </div>
@@ -138,7 +103,7 @@
         </div>
 
         <div class="distro-item">
-            <div class="flex-between">
+            <div class="slider-label">
                 <span>Team</span>
                 <span>10%</span>
             </div>
@@ -148,7 +113,7 @@
         </div>
 
         <div class="distro-item">
-            <div class="flex-between">
+            <div class="slider-label">
                 <span>Liquidity & Ops</span>
                 <span>5%</span>
             </div>
@@ -158,10 +123,10 @@
         </div>
     </section>
 
-    <section class="token-grid">
+    <section class="feature-grid">
         <div class="feature-card token-mechanics">
             <span class="card-icon">🔥</span>
-            <h3 class="pixel-heading">Token Mechanics</h3>
+            <h3>Token Mechanics</h3>
             <ul class="token-list">
                 <li>Quarterly Burns</li>
                 <li>Deflationary Model</li>
@@ -170,39 +135,37 @@
             </ul>
         </div>
 
-        <div class="bottom-row">
-            <div class="feature-card">
-                <span class="card-icon">🛡️</span>
-                <h3 class="pixel-heading">Core Utility</h3>
-                <ul class="token-list">
-                    <li>Premium Payments</li>
-                    <li>Claim Payouts</li>
-                    <li>Policy Discounts</li>
-                    <li>Protocol Fees</li>
-                </ul>
-            </div>
+        <div class="feature-card">
+            <span class="card-icon">🛡️</span>
+            <h3>Core Utility</h3>
+            <ul class="token-list">
+                <li>Premium Payments</li>
+                <li>Claim Payouts</li>
+                <li>Policy Discounts</li>
+                <li>Protocol Fees</li>
+            </ul>
+        </div>
 
-            <div class="feature-card">
-                <span class="card-icon">⚖️</span>
-                <h3 class="pixel-heading">Governance</h3>
-                <ul class="token-list">
-                    <li>Parameter Adjustments</li>
-                    <li>Upgrade Proposals</li>
-                    <li>Claim Approvals</li>
-                    <li>Treasury Management</li>
-                </ul>
-            </div>
+        <div class="feature-card">
+            <span class="card-icon">⚖️</span>
+            <h3>Governance</h3>
+            <ul class="token-list">
+                <li>Parameter Adjustments</li>
+                <li>Upgrade Proposals</li>
+                <li>Claim Approvals</li>
+                <li>Treasury Management</li>
+            </ul>
+        </div>
 
-            <div class="feature-card">
-                <span class="card-icon">💰</span>
-                <h3 class="pixel-heading">Staking</h3>
-                <ul class="token-list">
-                    <li>Liquidity Pools</li>
-                    <li>Governance Staking</li>
-                    <li>Long-term Lockups</li>
-                    <li>Yield Generation</li>
-                </ul>
-            </div>
+        <div class="feature-card">
+            <span class="card-icon">💰</span>
+            <h3>Staking</h3>
+            <ul class="token-list">
+                <li>Liquidity Pools</li>
+                <li>Governance Staking</li>
+                <li>Long-term Lockups</li>
+                <li>Yield Generation</li>
+            </ul>
         </div>
     </section>
 

@@ -754,3 +754,37 @@ nav a:hover {
   header::after {
     content: none !important;
   }
+  :root {
+    /* Replace with your chosen font */
+    --cyber-font: 'Orbitron', sans-serif;
+  }
+  
+  /* Replace all instances of 'Pixelify Sans' with var(--cyber-font) */
+  .pixel-heading, .logo, 
+  nav a, .button, 
+  .presale-amount, .timeline-marker,
+  .token-list li, .supply-display {
+    font-family: var(--cyber-font) !important;
+  }
+  
+  /* Add cyberpunk effects to compensate */
+  .pixel-heading {
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0,243,255,0.3);
+    background: linear-gradient(to right, #7d4fff, #00f3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Mobile optimization */
+  @media (max-width: 768px) {
+    :root {
+      font-size: 16px;
+    }
+    
+    .pixel-heading {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+  }

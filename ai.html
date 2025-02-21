@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Agentic AI - CLAIM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <base href="/">
     <style>
-        .ai-core {
-            max-width: 1200px;
+        /* Add timeline styles */
+        .timeline {
+            max-width: 800px;
             margin: 4rem auto;
             padding: 0 5%;
         }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .timeline-item {
+            display: flex;
             gap: 2rem;
-            padding: 4rem 5%;
-            justify-items: center;
+            margin: 3rem 0;
+            align-items: center;
         }
 
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--cyber-font);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .timeline-marker::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            height: 60px;
+            border-left: 2px dashed var(--primary);
+        }
+
+        .timeline-item:last-child .timeline-marker::after {
+            display: none;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            flex-grow: 1;
+        }
+
+        .timeline-content h3 {
+            font-family: var(--cyber-font);
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -41,70 +77,65 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="hero">
-        <h1 class="pixel-heading centered-heading">Agentic AI Engine</h1>
+        <h1>Agentic AI Engine</h1>
         <p>Autonomous agent for fair, efficient claims, 24/7 monitoring, and support</p>
     </section>
 
     <section class="feature-grid">
         <div class="feature-card">
             <span class="card-icon">🤖</span>
-            <h3 class="pixel-heading">Real-Time Analysis</h3>
-            <p class="centered-text">Continuous monitoring of wallet activity, asset changes, and premium adjustments</p>
+            <h3>Real-Time Analysis</h3>
+            <p>Continuous monitoring of wallet activity, asset changes, and premium adjustments</p>
         </div>
         
         <div class="feature-card">
             <span class="card-icon">🛡️</span>
-            <h3 class="pixel-heading">Support and Efficiency</h3>
-            <p class="centered-text">Create a policy, file a claim, and get help 24/7</p>
+            <h3>Support and Efficiency</h3>
+            <p>Create a policy, file a claim, and get help 24/7</p>
         </div>
+        
         <div class="feature-card">
-            <span class="card-icon">🛡️</span>
-            <h3 class="pixel-heading">DAO Coverage</h3>
-            <p class="centered-text">Agents join the DAO to assist in unbias claim opinions</p>
+            <span class="card-icon">🌐</span>
+            <h3>DAO Coverage</h3>
+            <p>Agents join the DAO to assist in unbiased claim opinions</p>
         </div>
     </section>
 
-    <section class="process-flow">
-        <h2 class="pixel-heading centered-heading">AI Assurance Cycle</h2>
+    <section class="timeline">
+        <h2 class="centered-heading">AI Assurance Cycle</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-marker">1</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Data Collection</h3>
-                    <p class="centered-text">Aggregate on-chain activity and market signals as well as changes</p>
+                    <h3>Data Collection</h3>
+                    <p>Aggregate on-chain activity and market signals as well as changes</p>
                 </div>
             </div>
             
-            <div class="timeline-connector"></div>
-
             <div class="timeline-item">
                 <div class="timeline-marker">2</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Risk Analysis</h3>
-                    <p class="centered-text">ML models evaluate asset and individual risk potential</p>
+                    <h3>Risk Analysis</h3>
+                    <p>ML models evaluate asset and individual risk potential</p>
                 </div>
             </div>
-
-            <div class="timeline-connector"></div>
 
             <div class="timeline-item">
                 <div class="timeline-marker">3</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Policy Adjustment</h3>
-                    <p class="centered-text">Automatic coverage modifications and premium adjustments</p>
+                    <h3>Policy Adjustment</h3>
+                    <p>Automatic coverage modifications and premium adjustments</p>
                 </div>
             </div>
-
-            <div class="timeline-connector"></div>
 
             <div class="timeline-item">
                 <div class="timeline-marker">4</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">DAO Reporting</h3>
-                    <p class="centered-text">Generate transparent audit trails</p>
+                    <h3>DAO Reporting</h3>
+                    <p>Generate transparent audit trails</p>
                 </div>
             </div>
         </div>

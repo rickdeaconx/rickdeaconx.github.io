@@ -20,31 +20,50 @@
         }
 
         .presale-amount {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 6.5rem;
-            color: transparent;
-            background: linear-gradient(45deg, #7d4fff 30%, #00f3ff 70%);
+            font-family: 'Pixelify Sans', sans-serif;
+            font-weight: 700;
+            font-size: 6rem;
+            color: #00f3ff;
+            background: linear-gradient(45deg, #7d4fff 0%, #00f3ff 100%);
             -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 2px 2px 0 var(--bg),
-                        -2px -2px 0 var(--bg),
-                        2px -2px 0 var(--bg),
-                        -2px 2px 0 var(--bg),
-                        0 0 20px rgba(125,79,255,0.3);
+                    background-clip: text;
+            text-shadow: 
+                0 0 15px rgba(125,79,255,0.5),
+                0 0 5px var(--bg),
+                0 0 3px var(--bg);
             animation: pulseScale 3s infinite;
             margin: 2rem 0;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
             position: relative;
             line-height: 1;
+            padding: 0 1rem;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(0,243,255,0.2));
+        }
+
+        .presale-amount::before {
+            content: '$250K';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--bg);
+            z-index: -1;
+            text-shadow: 
+                0 0 20px var(--bg),
+                0 0 30px var(--bg);
         }
 
         @keyframes pulseScale {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
         }
 
-        /* Rest of styles remain unchanged */
         .presale-subtext {
             font-size: 1.2rem;
             max-width: 600px;
@@ -123,7 +142,7 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="presale-hero">
         <div class="presale-amount">$250K</div>

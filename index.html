@@ -30,13 +30,38 @@
         .hero h1 {
             font-size: clamp(2.5rem, 8vw, 4rem);
         }
+
+        /* Presale Button Styles */
+        .presale-cta-container {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .presale-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: #00f3ff;
+            color: #0a0e17;
+            font-family: 'Orbitron', 'Arial Narrow', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.3);
+        }
+        
+        .presale-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(0, 243, 255, 0.5);
+        }
     </style>
 </head>
 <body>
     <div class="gradient-layers layer-1"></div>
     <div class="gradient-layers layer-2"></div>
     
-    <header>
+    <header style="z-index: 1000;">
         <a href="index.html" class="logo">CLAIM</a>
         <nav>
             <a href="ai.html">Agentic AI</a>

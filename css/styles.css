@@ -726,3 +726,31 @@ nav a:hover {
       text-align: center;
     }
   }
+  /* Add this to your styles.css */
+.logo, .pixel-heading {
+    /* Fallback for unsupported browsers */
+    color: var(--primary);
+    
+    /* Gradient text with proper stacking */
+    background: linear-gradient(45deg, #7d4fff, #00f3ff);
+    -webkit-background-clip: text !important;
+            background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Fix for mobile Safari */
+  @supports (-webkit-touch-callout: none) {
+    .logo, .pixel-heading {
+      -webkit-box-decoration-break: clone;
+              box-decoration-break: clone;
+    }
+  }
+  
+  /* Remove any conflicting styles */
+  header::before,
+  header::after {
+    content: none !important;
+  }

@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="css/styles.css">
     <base href="/">
     <style>
+        /* Token Mechanics Highlight */
+        .token-mechanics {
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 800px;
+            background: linear-gradient(45deg, rgba(90,83,185,0.2), rgba(0,243,255,0.1));
+            border: 2px solid var(--accent);
+            transform: scale(1.02);
+            order: -1;
+            margin-bottom: 3rem;
+            box-shadow: 0 0 40px rgba(0,243,255,0.1);
+            animation: glowPulse 3s infinite;
+        }
+
+        .token-mechanics .card-icon {
+            font-size: 3rem;
+            text-shadow: 0 0 15px rgba(255,100,100,0.3);
+        }
+
+        .token-mechanics h3 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(0,243,255,0.1); }
+            50% { box-shadow: 0 0 60px rgba(0,243,255,0.2); }
+        }
+
+        /* Token Distribution Styles */
         .token-distro {
             background: rgba(255,255,255,0.03);
             border-radius: 20px;
@@ -52,10 +85,19 @@
         .token-list li {
             padding: 0.5rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            padding-left: 1.5rem;
         }
 
         .token-list li:last-child {
             border-bottom: none;
+        }
+
+        .token-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
         }
     </style>
 </head>
@@ -192,6 +234,23 @@
             });
         });
         observer.observe(document.querySelector('.token-distro'));
+
+        // Card entrance animations
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+            cardObserver.observe(card);
+        });
     </script>
 </body>
 </html>

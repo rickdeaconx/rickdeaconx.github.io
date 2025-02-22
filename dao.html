@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DAO Governance - CLAIM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <base href="/">
+    <style>
+        /* Timeline styles matching AI page */
+        .timeline {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin: 3rem 0;
+            align-items: center;
+        }
+
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--cyber-font);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .timeline-marker::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            height: 60px;
+            border-left: 2px dashed var(--primary);
+        }
+
+        .timeline-item:last-child .timeline-marker::after {
+            display: none;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            flex-grow: 1;
+        }
+
+        .timeline-content h3 {
+            font-family: var(--cyber-font);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <div class="gradient-layers layer-1"></div>
@@ -22,61 +77,57 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="hero">
-        <h1 class="pixel-heading centered-heading">Decentralized Governance</h1>
+        <h1>Decentralized Governance</h1>
         <p>Community-powered protocol management with AI oversight</p>
     </section>
 
     <section class="feature-grid">
         <div class="feature-card">
             <span class="card-icon">🗳️</span>
-            <h3 class="pixel-heading">Protocol Voting</h3>
-            <p class="centered-text">Token holders vote on system upgrades</p>
+            <h3>Protocol Voting</h3>
+            <p>Token holders vote on system upgrades</p>
         </div>
         
         <div class="feature-card">
             <span class="card-icon">🔍</span>
-            <h3 class="pixel-heading">Claim Audits</h3>
-            <p class="centered-text">Community review of insurance payouts</p>
+            <h3>Claim Audits</h3>
+            <p>Community review of insurance payouts</p>
         </div>
         
         <div class="feature-card">
             <span class="card-icon">🌱</span>
-            <h3 class="pixel-heading">Treasury Mgmt</h3>
-            <p class="centered-text">Collective fund allocation decisions</p>
+            <h3>Treasury Mgmt</h3>
+            <p>Collective fund allocation decisions</p>
         </div>
     </section>
 
-    <section class="process-flow">
-        <h2 class="pixel-heading centered-heading">Governance Process</h2>
+    <section class="timeline">
+        <h2 class="centered-heading">Governance Process</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-marker">1</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Claim Submission</h3>
-                    <p class="centered-text">Policy holders submit claims for DAO review</p>
+                    <h3>Claim Submission</h3>
+                    <p>Policy holders submit claims for DAO review</p>
                 </div>
             </div>
-            
-            <div class="timeline-connector"></div>
 
             <div class="timeline-item">
                 <div class="timeline-marker">2</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Community Review</h3>
-                    <p class="centered-text">DAO members analyze claim evidence</p>
+                    <h3>Community Review</h3>
+                    <p>DAO members analyze claim evidence</p>
                 </div>
             </div>
-            
-            <div class="timeline-connector"></div>
 
             <div class="timeline-item">
                 <div class="timeline-marker">3</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">On-Chain Vote</h3>
-                    <p class="centered-text">Token-weighted voting determines outcome</p>
+                    <h3>On-Chain Vote</h3>
+                    <p>Token-weighted voting determines outcome</p>
                 </div>
             </div>
         </div>

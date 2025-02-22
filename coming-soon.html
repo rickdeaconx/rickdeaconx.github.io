@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Coming Soon - CLAIM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <base href="/">
+    <style>
+        .construction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pixel-loader {
+            font-size: 4rem;
+            animation: spin 2s linear infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .countdown {
+            font-family: var(--cyber-font);
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .countdown-item {
+            display: inline-block;
+            margin: 0 1rem;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
     <div class="gradient-layers layer-1"></div>
     <div class="gradient-layers layer-2"></div>
+    
     <header>
         <a href="index.html" class="logo">CLAIM</a>
         <nav>
@@ -21,19 +69,93 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="hero">
         <div class="construction-animation">
             <div class="pixel-loader">🛠️</div>
             <h1>Protocol Under Construction</h1>
             <p>Agentic systems deploying protection modules...</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
         </div>
-            <!-- Add hours/minutes -->
+    </section>
+
+    <section class="construction-grid">
+        <div class="feature-card">
+            <span class="card-icon">🤖</span>
+            <h3>AI Core Loading</h3>
+            <p>Neural networks initializing...</p>
+            <div class="progress-container">
+                <div class="progress-fill" style="width: 85%"></div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <span class="card-icon">🛡️</span>
+            <h3>Security Protocols</h3>
+            <p>Encryption layers deploying...</p>
+            <div class="progress-container">
+                <div class="progress-fill" style="width: 65%"></div>
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <span class="card-icon">🌐</span>
+            <h3>DAO Integration</h3>
+            <p>Governance modules syncing...</p>
+            <div class="progress-container">
+                <div class="progress-fill" style="width: 45%"></div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <!-- Same footer as index.html -->
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <p class="footer-note">© 2025 CLAIM Protocol</p>
     </footer>
+
+    <script>
+        // Countdown timer (placeholder dates)
+        const countdownDate = new Date('2024-12-31T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>

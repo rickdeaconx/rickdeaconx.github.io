@@ -1,49 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Features - CLAIM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-
     <base href="/">
     <style>
-        :root {
-            --primary: #5A53B9;
-            --secondary: #3A32A3;
-            --bg: #0a0e17;
-            --text: #e6f1ff;
+        /* Timeline styles matching other pages */
+        .timeline {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 5%;
         }
 
-        .hero h1.pixel-heading {
-            font-family: 'Pixelify Sans', sans-serif;
-            font-size: 3.5rem;
-            color: var(--primary); /* Solid purple/blue color */
-            margin-bottom: 1.5rem;
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin: 3rem 0;
+            align-items: center;
         }
 
-        .timeline-content h3.pixel-heading {
-            font-family: 'Pixelify Sans', sans-serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .feature-card h3.pixel-heading {
-            font-family: 'Pixelify Sans', sans-serif;
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--cyber-font);
             font-size: 1.5rem;
-            color: var(--primary);
+            flex-shrink: 0;
+            position: relative;
         }
 
-        .pixel-heading {
-            color: var(--primary);
+        .timeline-marker::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            height: 60px;
+            border-left: 2px dashed var(--primary);
         }
 
-        .card-icon {
+        .timeline-item:last-child .timeline-marker::after {
+            display: none;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            flex-grow: 1;
+        }
+
+        .timeline-content h3 {
+            font-family: var(--cyber-font);
             color: var(--primary);
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -60,60 +77,56 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="hero">
-        <h1 class="pixel-heading">DeFAI Protection Matrix</h1>
+        <h1>DeFAI Protection Matrix</h1>
         <p>Agentic systems powered by decentralized governance and real-time data</p>
     </section>
 
     <section class="feature-grid">
         <div class="feature-card">
             <span class="card-icon">🤖</span>
-            <h3 class="pixel-heading">AI Risk Engine</h3>
+            <h3>AI Risk Engine</h3>
             <p>Real-time monitoring and dynamic pricing models</p>
         </div>
         
         <div class="feature-card">
             <span class="card-icon">⚡</span>
-            <h3 class="pixel-heading">Instant Claims</h3>
+            <h3>Instant Claims</h3>
             <p>Automated processing with fair and accurate DAO based resolution</p>
         </div>
         
         <div class="feature-card">
             <span class="card-icon">🛡️</span>
-            <h3 class="pixel-heading">Fair Governance</h3>
+            <h3>Fair Governance</h3>
             <p>Token stakers and agents both determine the direction of CLAIM as well as payouts to policy holders</p>
         </div>
     </section>
 
-    <section class="process-flow">
-        <h2 class="pixel-heading centered-heading">Protection Protocol</h2>
+    <section class="timeline">
+        <h2 class="centered-heading">Protection Protocol</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-marker">1</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Wallet Analysis</h3>
+                    <h3>Wallet Analysis</h3>
                     <p>AI scans transaction history and asset distribution</p>
                 </div>
             </div>
-            
-            <div class="timeline-connector"></div>
 
             <div class="timeline-item">
                 <div class="timeline-marker">2</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Risk Scoring</h3>
+                    <h3>Risk Scoring</h3>
                     <p>Dynamic evaluation of wallet vulnerability</p>
                 </div>
             </div>
 
-            <div class="timeline-connector"></div>
-
             <div class="timeline-item">
                 <div class="timeline-marker">3</div>
                 <div class="timeline-content">
-                    <h3 class="pixel-heading">Policy Activation</h3>
+                    <h3>Policy Activation</h3>
                     <p>Smart contract deployment with custom terms</p>
                 </div>
             </div>

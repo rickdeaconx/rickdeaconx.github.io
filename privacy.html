@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Privacy Policy - CLAIM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <base href="/">
     <style>
@@ -16,18 +15,32 @@
             line-height: 1.6;
         }
 
+        .legal-content h1 {
+            font-family: var(--cyber-font);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
         .legal-content h2 {
-            font-family: 'Pixelify Sans', sans-serif;
-            color: #5A53B9;
+            font-family: var(--cyber-font);
+            color: var(--primary);
             margin: 3rem 0 1.5rem;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid rgba(90,83,185,0.3);
+            padding-bottom: 0.5rem;
         }
 
         .legal-content p {
-            color: #e6f1ff;
+            color: var(--text);
             opacity: 0.9;
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.02);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
         }
     </style>
 </head>
@@ -44,10 +57,10 @@
             <a href="token.html">Token</a>
             <a href="https://docs.claim.sucks" class="button primary">Docs</a>
         </nav>
-        </header>
+    </header>
 
     <section class="legal-content">
-        <h1 class="pixel-heading">Privacy Policy</h1>
+        <h1>Privacy Policy</h1>
         
         <h2>1. Data Collection</h2>
         <p>CLAIM collects minimal on-chain data required for insurance operations. We never request personal identification information.</p>

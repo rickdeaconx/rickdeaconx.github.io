@@ -433,7 +433,6 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.1);
 }
-<!-- Optimized CSS -->
 .security-section {
     max-width: 1200px;
     margin: 4rem auto;
@@ -479,3 +478,42 @@ input[type="range"]::-webkit-slider-thumb {
         min-height: auto;
     }
 }
+@media (max-width: 768px) {
+    header {
+      background: none !important;
+    }
+    
+    .logo {
+      background: transparent !important;
+      padding: 0 !important;
+    }
+  
+    .logo-image {
+      filter: drop-shadow(0 0 5px rgba(0,243,255,0.2));
+    }
+  }
+  @media (max-width: 768px) {
+    /* Add this to existing mobile styles */
+    .hero h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: none !important;
+      -webkit-text-fill-color: inherit;
+    }
+  
+    h2, h3 {
+      font-size: 1.5rem !important;
+      line-height: 1.3;
+    }
+  
+    .feature-card h3 {
+      font-size: 1.25rem !important;
+    }
+  
+    /* Fix text gradients on mobile */
+    .hero h1::before {
+      content: none;
+    }
+  }
+  

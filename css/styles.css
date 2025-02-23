@@ -433,3 +433,49 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.1);
 }
+<!-- Optimized CSS -->
+.security-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.security-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    min-height: 120px;
+}
+
+.security-icon {
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+}
+
+.security-content h4 {
+    font-family: var(--cyber-font);
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .security-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .security-item {
+        min-height: auto;
+    }
+}

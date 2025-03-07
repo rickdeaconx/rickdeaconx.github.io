@@ -34,7 +34,7 @@ DEFAULT: '8px',
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 body {
-  font-family: 'Inter', sans-serif;
+font-family: 'Inter', sans-serif;
 }
 </style>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -396,13 +396,10 @@ cursor: pointer;
 <h2 class="text-3xl font-bold mb-6">Trusted By Industry Leaders</h2>
 <div class="flex flex-wrap justify-center items-center gap-12">
 <div class="bg-gray-900/50 backdrop-blur p-6 rounded-lg border border-gray-700">
-<img src="https://public.readdy.ai/ai/img_res/bfc078892bbe9a185868845b9a17dd5b.jpg" alt="Interlock" class="h-12 w-auto">
+<img src="https://static.readdy.ai/image/c2c6225610fb79b3f1515f9e713f91a5/3b12127dd0546b73b44b399f3d22f813.png" alt="HiveFury" class="h-12 w-auto">
 </div>
 <div class="bg-gray-900/50 backdrop-blur p-6 rounded-lg border border-gray-700">
-<img src="https://public.readdy.ai/ai/img_res/ec4ec452982abe755caf4b2421112f67.jpg" alt="Bevor" class="h-12 w-auto">
-</div>
-<div class="bg-gray-900/50 backdrop-blur p-6 rounded-lg border border-gray-700 flex items-center justify-center">
-<span class="text-gray-400">More to come...</span>
+<img src="https://static.readdy.ai/image/c2c6225610fb79b3f1515f9e713f91a5/7abae4a837c200f4e9c38ca0782299dd.webp" alt="Bevor" class="h-12 w-auto">
 </div>
 </div>
 </div>
@@ -417,22 +414,19 @@ cursor: pointer;
 const coverageSlider = document.getElementById('coverageSlider');
 const coverageValue = document.getElementById('coverageValue');
 const premiumValue = document.getElementById('premiumValue');
-function calculatePremium(coverage) {
-const assetValue = coverage;
-const coveragePercentage = 0.8; // 80% coverage
-const lossProbability = 0.01; // 1% probability
-const targetReserve = 1.5; // 150% reserve ratio
-const insurancePeriod = 12; // 12 months
-return Math.round((assetValue * coveragePercentage * lossProbability * targetReserve) / insurancePeriod);
+const formatter = new Intl.NumberFormat('en-US', {
+style: 'currency',
+currency: 'USD'
+});
+function calculatePremium() {
+const A = parseFloat(document.getElementById('coverageSlider').value);
+const C = 0.7, L = 0.015, R = 1.1, P = 6;
+const monthly = (A * C * L * R) / P;
+premiumValue.textContent = formatter.format(monthly);
+coverageValue.textContent = formatter.format(A);
 }
-function updateValues() {
-const coverage = parseInt(coverageSlider.value);
-coverageValue.textContent = `$${coverage.toLocaleString()}`;
-const premium = calculatePremium(coverage);
-premiumValue.textContent = `$${premium.toLocaleString()}`;
-}
-coverageSlider.addEventListener('input', updateValues);
-updateValues();
+coverageSlider.addEventListener('input', calculatePremium);
+calculatePremium();
 document.getElementById('mobile-menu-button').addEventListener('click', function() {
 const mobileMenu = document.createElement('div');
 mobileMenu.className = 'fixed inset-0 bg-gray-900/95 z-50 flex items-center justify-center';
